@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Value Constructions — Quality construction, transparent process, and expert project execution." />
+  <title>Value Constructions | Build With Confidence</title>
+
+  <style>
+    :root {
+      --primary: #f45b0a;
+      --primary-dark: #d94d05;
+      --ink: #172033;
+      --muted: #667085;
+      --surface: #ffffff;
+      --canvas: #f7f8fa;
+      --line: #e6e8ec;
+      --soft: #fff3eb;
+      --max: 1180px;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--surface);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 20px;
+    }
+
+    .brand-logo {
+      height: 42px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: #fff;
+      background: var(--primary);
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: #475467;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 82% 20%, rgba(244,91,10,.13), transparent 30%),
+        linear-gradient(135deg, #fff 0%, #fff9f5 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      min-height: 610px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 70px;
+      padding: 72px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin: 18px 0;
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+    }
+
+    .hero-copy {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 11px;
+      border: 1px solid var(--ink);
+      font-weight: 750;
+      font-size: 14px;
+    }
+
+    .button-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .button-secondary {
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 460px;
+      overflow: hidden;
+      border-radius: 28px;
+      background:
+        linear-gradient(145deg, rgba(15,23,42,.1), rgba(15,23,42,.72)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=85")
+        center / cover;
+      border: 1px solid rgba(255,255,255,.7);
+    }
+
+    .hero-card-content {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      padding: 20px;
+      border-radius: 16px;
+      color: #fff;
+      background: rgba(16,24,40,.78);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card-content strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .hero-card-content span {
+      color: #d0d5dd;
+      font-size: 13px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat {
+      padding: 28px 22px;
+      text-align: center;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child { border-right: 0; }
+
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      letter-spacing: -.03em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section { padding: 88px 0; }
+
+    .section-head {
+      max-width: 680px;
+      margin-bottom: 38px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 12px;
+      font-size: 38px;
+      line-height: 1.1;
+      letter-spacing: -.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .services {
+      background: var(--canvas);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 26px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .service-number {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .service h3 {
+      margin: 16px 0 8px;
+      font-size: 20px;
+    }
+
+    .service p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .process {
+      padding: 22px;
+      border-top: 3px solid var(--primary);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-top-width: 3px;
+    }
+
+    .process b {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .process span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .lead-section {
+      background: #111827;
+      color: #fff;
+    }
+
+    .lead-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .lead-copy h2 {
+      margin: 0 0 14px;
+      font-size: 42px;
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+
+    .lead-copy p {
+      color: #cbd5e1;
+      max-width: 500px;
+    }
+
+    .trust-list {
+      padding: 0;
+      margin: 28px 0 0;
+      list-style: none;
+    }
+
+    .trust-list li {
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      color: #e2e8f0;
+      font-size: 14px;
+    }
+
+    .trust-list li::before {
+      content: "✓";
+      color: #ff8a4c;
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .form-shell {
+      padding: 28px;
+      border-radius: 22px;
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid rgba(255,255,255,.15);
+    }
+
+    .form-shell h3 {
+      margin: 0 0 5px;
+      font-size: 22px;
+    }
+
+    .form-shell p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    #vc-lead-form {
+      min-height: 150px;
+    }
+
+    .footer {
+      padding: 28px 0;
+      background: #0b1220;
+      color: #98a2b3;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links { display: none; }
+      .hero-grid,
+      .lead-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 36px; }
+      .hero-card { min-height: 360px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: 0; }
+      .service-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      section { padding: 64px 0; }
+      .hero-grid { padding: 52px 0; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .stat { padding: 20px 10px; }
+      .process-grid { grid-template-columns: 1fr; }
+      .form-shell { padding: 20px; }
+      h1 { font-size: 43px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="brand">
+          <img src="logo.png" alt="Value Constructions" class="brand-logo" onerror="this.style.display='none'; document.getElementById('brand-mark-fallback').style.display='grid';" />
+          <span id="brand-mark-fallback" class="brand-mark" style="display: none;">VC</span>
+          <span>Value Constructions</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#enquiry">Get Estimate</a>
+        </div>
+
+        <a href="#enquiry" class="nav-cta">Start Your Project</a>
+      </nav>
+
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Construction · Design · Execution</span>
+
+          <h1>Build a space that feels like yours.</h1>
+
+          <p class="hero-copy">
+            From the first conversation to final handover, Value Constructions
+            brings design, planning, quality and execution together under one
+            transparent process.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#enquiry" class="button button-primary">Get a Free Consultation</a>
+            <a href="#process" class="button button-secondary">See How It Works</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-content">
+            <strong>Thoughtful construction. Reliable execution.</strong>
+            <span>Tell us about your project and our team will get in touch.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="stats">
+      <div class="stat">
+        <strong>01</strong>
+        <span>Single project partner</span>
+      </div>
+      <div class="stat">
+        <strong>02</strong>
+        <span>Transparent planning</span>
+      </div>
+      <div class="stat">
+        <strong>03</strong>
+        <span>Structured execution</span>
+      </div>
+      <div class="stat">
+        <strong>04</strong>
+        <span>Dedicated support</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Everything your project needs.</h2>
+        <p>
+          A coordinated approach that keeps design, commercial planning and
+          construction execution connected from day one.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service">
+          <span class="service-number">01 / DESIGN</span>
+          <h3>Planning & Design</h3>
+          <p>Turn your ideas, requirements and site conditions into a practical project plan.</p>
+        </article>
+
+        <article class="service">
+          <span class="service-number">02 / COMMERCIAL</span>
+          <h3>Cost & Proposal</h3>
+          <p>Understand the scope, quantities and commercial proposal before execution begins.</p>
+        </article>
+
+        <article class="service">
+          <span class="service-number">03 / EXECUTION</span>
+          <h3>Construction</h3>
+          <p>Coordinate materials, vendors, milestones and site execution through a structured process.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="section-head">
+        <h2>A clear path from enquiry to execution.</h2>
+        <p>
+          We keep the journey simple, transparent and focused on the next
+          important decision.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process">
+          <b>01. Tell us what you need</b>
+          <span>Share your project type, location, budget and requirements.</span>
+        </div>
+
+        <div class="process">
+          <b>02. Discuss the project</b>
+          <span>Connect with our team and understand the possibilities.</span>
+        </div>
+
+        <div class="process">
+          <b>03. Plan & propose</b>
+          <span>Review scope, costing and the proposed approach.</span>
+        </div>
+
+        <div class="process">
+          <b>04. Build with confidence</b>
+          <span>Move into structured execution with project visibility.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="enquiry" class="lead-section">
+    <div class="container">
+      <div class="lead-grid">
+
+        <div class="lead-copy">
+          <span class="eyebrow">Start your project</span>
+          <h2>Let's understand what you're planning.</h2>
+
+          <p>
+            Share a few details and our construction team can understand your
+            requirements before getting in touch.
+          </p>
+
+          <ul class="trust-list">
+            <li>Residential and construction enquiries</li>
+            <li>Project requirement assessment</li>
+            <li>Budget and timeline discussion</li>
+            <li>Consultation with the project team</li>
+          </ul>
+        </div>
+
+        <div class="form-shell">
+          <h3>Request a consultation</h3>
+          <p>Fill in your project details below.</p>
+
+          <!-- Value Constructions Lead Acquisition Widget -->
+          <div id="vc-lead-form"></div>
+
+          <script
+            src="https://value-crm.inyourarea.online/embed/lead-widget.js?v=1"
+            data-form-key="default-website-inquiry"
+            data-mode="inline"
+            async>
+          </script>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 Value Constructions. All rights reserved.</span>
+      <span>Built for a better construction experience.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
